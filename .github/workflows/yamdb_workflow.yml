@@ -74,6 +74,7 @@ jobs:
           key: ${{ secrets.SSH_PASSWORD }}
           script: |
             sudo docker pull afivan20/infra_yamdb
+            docker-compose down -v
             sudo docker stop $(sudo docker ps -a -q)
             sudo docker-compose rm web
 
