@@ -86,8 +86,7 @@ class TitleSerializer(serializers.ModelSerializer):
             'description', 'category', 'genre')
 
     def get_rating(self, obj):
-        rating = obj.reviews.all().aggregate(Avg('score'))['score__avg']
-        return rating
+        return obj.reviews.all().aggregate(Avg('score'))['score__avg']
 
     def validate_year(self, value):
         thisyear = dt.date.today().year
@@ -114,8 +113,7 @@ class CurrentTitleDafault:
     def __call__(self, serializer_field):
         c_view = serializer_field.context['view']
         title_id = c_view.kwargs.get('title_id')
-        title = get_object_or_404(Title, id=title_id)
-        return title
+        return get_object_or_404(Title, id=title_id)
 
     def __repr__(self):
         return f'{self.__class__.__name__}()'
