@@ -7,7 +7,7 @@ services:
     env_file:
       - ./.env
   web:
-    image: afivan20/web:v1.0
+    image: afivan20/infra_yamdb
     restart: always
 
     volumes:
