@@ -1,27 +1,25 @@
-from rest_framework import status, viewsets, filters, generics, mixins
-from rest_framework.views import APIView
-from rest_framework.decorators import action
-from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
-from rest_framework.pagination import PageNumberPagination
-from api.permissions import (
-    IsAdminModeratorAuthorOrReadOnly,
-    IsAdminUserOrReadOnlyGenCat,
-    IsAdmin
-)
-from reviews.models import User, Category, Genre, Title, Comment, Review
-from api.serializers import (
-    SignUpSerializer, UserTokenSerializer, UserSerializer,
-    CategorySerializer, GenreSerializer,
-    TitleSerializer, TitleSerializerView,
-    ReviewSerializer, CommentSerializer
-)
-from api.filters import GenreFilter
-from django_filters.rest_framework import DjangoFilterBackend
-from django.shortcuts import get_object_or_404
 from uuid import uuid1
-from rest_framework_simplejwt.tokens import RefreshToken
+
 from django.core.mail import send_mail
+from django.shortcuts import get_object_or_404
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters, generics, mixins, status, viewsets
+from rest_framework.decorators import action
+from rest_framework.pagination import PageNumberPagination
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from rest_framework_simplejwt.tokens import RefreshToken
+from reviews.models import Category, Comment, Genre, Review, Title, User
+
+from api.filters import GenreFilter
+from api.permissions import (IsAdmin, IsAdminModeratorAuthorOrReadOnly,
+                             IsAdminUserOrReadOnlyGenCat)
+from api.serializers import (CategorySerializer, CommentSerializer,
+                             GenreSerializer, ReviewSerializer,
+                             SignUpSerializer, TitleSerializer,
+                             TitleSerializerView, UserSerializer,
+                             UserTokenSerializer)
 
 
 class HTTPMethod:

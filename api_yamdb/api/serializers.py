@@ -1,12 +1,11 @@
-from rest_framework import serializers, exceptions
-from reviews.models import User
-from reviews.models import Category, Genre, Title
 import datetime as dt
-from reviews.models import Review, Comment
-from rest_framework.relations import SlugRelatedField
+
 from django.db.models import Avg
-from rest_framework.validators import UniqueTogetherValidator
 from django.shortcuts import get_object_or_404
+from rest_framework import exceptions, serializers
+from rest_framework.relations import SlugRelatedField
+from rest_framework.validators import UniqueTogetherValidator
+from reviews.models import Category, Comment, Genre, Review, Title, User
 
 
 class SignUpSerializer(serializers.ModelSerializer):
