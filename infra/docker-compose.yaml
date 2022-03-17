@@ -7,8 +7,7 @@ services:
     env_file:
       - ./.env
   web:
-    build:
-      image: afivan20/web
+    image: afivan20/web
     restart: always
 
     volumes:
