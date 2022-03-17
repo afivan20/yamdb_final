@@ -1,4 +1,4 @@
-![example workflow](https://github.com/github/docs/actions/workflows/yamdb_workflow.yml/badge.svg)
+![example workflow](https://github.com/<OWNER>/<REPOSITORY>/actions/workflows/<WORKFLOW_FILE>/badge.svg)
 # Документация к API проекта YAMDB (v1)
 
 ## Описание
@@ -30,10 +30,10 @@ docker-compose exec web python manage.py collectstatic --no-input
 ```
 docker-compose exec web python manage.py importcsv
 ```
-Ресурс доступен в [localhost](http://localhost/)
+Ресурс доступен в [localhost](http://178.154.229.26/)
 
 Ознакомиться с документацией - 
-[тут](http://localhost/redoc/)
+[тут](http://178.154.229.26/redoc/)
 
 ### Алгоритм получения токена:
 #### 1. Получить код подтвержения.
