@@ -60,7 +60,7 @@ jobs:
           context: api_yamdb
           push: true
           tags: afivan20/infra_yamdb:latest
-  ##### docker-compose
+  ### docker-compose
   deploy:
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
