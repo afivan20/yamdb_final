@@ -57,7 +57,7 @@ jobs:
         # Пуш образа в Docker Hub 
         uses: docker/build-push-action@v2 
         with:
-          context: /api_yamdb/
+          context: .; cd api_yamdb
           push: true
           tags: afivan20/infra_yamdb:latest
 
