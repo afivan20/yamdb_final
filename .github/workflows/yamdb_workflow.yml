@@ -72,6 +72,12 @@ jobs:
           username: ${{ secrets.USER }}
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
+            # Выполняет pull образа с DockerHub
+            sudo docker pull afivan20/infra_yamdb
+            #остановка всех контейнеров
+            sudo docker stop $(sudo docker ps -a -q)
+            sudo docker run --rm -d -p 5000:5000 infra/yamdb
+
             sudo docker-compose stop
             sudo docker-compose rm web
             touch .env
