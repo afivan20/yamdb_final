@@ -109,6 +109,6 @@ docker-compose down -v
 ```
 docker pull afivan20/api_yamdb:latest
 ```
-
+ 
 ### Автор
 _Иван Афанасьев, python-devloper_
