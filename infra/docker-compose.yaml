@@ -6,8 +6,8 @@ services:
       - db-data:/data
     env_file:
       - ./.env
-  web: #
-    image: afivan20/infra_yamdb:latest
+  web:
+    image: afivan20/api_yamdb:latest
     restart: always
 
     volumes:
