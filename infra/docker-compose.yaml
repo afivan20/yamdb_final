@@ -6,7 +6,7 @@ services:
       - db-data:/data
     env_file:
       - ./.env
-  web: 
+  web: #
     image: afivan20/api_yamdb:latest
     restart: always
 
