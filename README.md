@@ -10,33 +10,34 @@
 ```
 git clone https://github.com/afivan20/yamdb_final.git
 ``` 
-- Зайти в папку infra и перенести файлы docker-compose.yaml и /nginx/default.conf на удаленный сервер:
+- Зайти в папку infra и перенести файлы `docker-compose.yaml` и `/nginx/default.conf` на удаленный сервер:
 ```
 scp ./docker-compose.yaml <имя-пользователя>@<ip-address>:~/
 ```
 ```
 scp ./nginx/default.conf <имя-пользователя>@<ip-address>:~/
 ```
-- Прописать секреты в https://github.com/<ваш-username>/yamdb_final/settings/secrets/actions:
+- Прописать секреты в `https://github.com/<ваш-username>/yamdb_final/settings/secrets/actions`:
 для удаленного сервера:
-HOST
-USER
-SSH_PASSWORD
+⋅⋅⋅HOST
+⋅⋅⋅USER
+⋅⋅⋅SSH_PASSWORD
 
 для базы данных:
-DB_ENGINE
-DB_NAME
-POSTGRES_USER
-POSTGRES_PASSWORD
-DB_HOST
-DB_PORT
+⋅⋅⋅DB_ENGINE
+⋅⋅⋅DB_NAME
+⋅⋅⋅POSTGRES_USER
+⋅⋅⋅POSTGRES_PASSWORD
+⋅⋅⋅DB_HOST
+⋅⋅⋅DB_PORT
 
 для логина в DockerHub:
-DOCKER_USERNAME
-DOCKER_PASSWORD
+⋅⋅⋅DOCKER_USERNAME
+⋅⋅⋅DOCKER_PASSWORD
 
-TELEGRAM_TOKEN
-TELEGRAM_TO
+для уведомлений от Телеграм-бота
+⋅⋅⋅TELEGRAM_TOKEN
+⋅⋅⋅TELEGRAM_TO
 
 - Запушить проект на гит-хаб. С помощью CI/CD проект запустит тесты, сделает пуш образа на DockerHub и развернет проект на удаленном сервере, после успешного выполнения всех этапов получите уведомление в Telegram.
 - Выполнить миграции на удаленном сервере:
