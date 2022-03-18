@@ -10,7 +10,7 @@
 ```
 git clone https://github.com/afivan20/yamdb_final.git
 ``` 
-- Зайти в папку infra и перенести файлы docker-compose.yaml и default.conf из infra/nginx на удаленный сервер:
+- Зайти в папку infra и перенести файлы docker-compose.yaml и /nginx/default.conf на удаленный сервер:
 ```
 scp ./docker-compose.yaml <имя-пользователя>@<ip-address>:~/
 ```
@@ -18,6 +18,9 @@ scp ./docker-compose.yaml <имя-пользователя>@<ip-address>:~/
 scp ./nginx/default.conf <имя-пользователя>@<ip-address>:~/
 ```
 
+```
+sudo docker-compose exec web python manage.py migrate
+```
 - Создать Супер Пользовтеля:
 ```
 docker-compose exec web python manage.py createsuperuser
