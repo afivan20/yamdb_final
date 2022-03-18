@@ -2,22 +2,22 @@
 # Документация к API проекта YAMDB (v1)
 
 ## Описание
-Проект YaMDb собирает отзывы пользователей на различные произведения;
+Проект YaMDb собирает отзывы пользователей на различные произведения. 
+Он полность готов для автоматического развертывания его на удалленном сервере.
 
-## Как запустить проект:
-- Проект доступен в репозитории:
+## Как запустить проект на удаленном сервере:
+- Сделать форк данного репозитория и клонировать его себе на локальную машину:
 ```
-git clone https://github.com/afivan20/infra_sp2.git
-cd infra_sp2; cd infra
+git clone https://github.com/afivan20/yamdb_final.git
 ``` 
-- Запустить контейнеры Docker в папке с файлом docker-compose.yaml:
+- Зайти в папку infra и перенести файлы docker-compose.yaml и default.conf из infra/nginx на удаленный сервер:
 ```
-docker-compose up -d --build
+scp ./docker-compose.yaml <имя-пользователя>@<ip-address>:~/
 ```
-- Выполнить миграции внутри проекта:
 ```
-docker-compose exec web python manage.py migrate
+scp ./nginx/default.conf <имя-пользователя>@<ip-address>:~/
 ```
+
 - Создать Супер Пользовтеля:
 ```
 docker-compose exec web python manage.py createsuperuser
