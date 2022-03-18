@@ -17,26 +17,41 @@ scp ./docker-compose.yaml <имя-пользователя>@<ip-address>:~/
 ```
 scp ./nginx/default.conf <имя-пользователя>@<ip-address>:~/
 ```
+- Прописать секреты в https://github.com/<ваш-username>/yamdb_final/settings/secrets/actions:
+для удаленного сервера:
+HOST
+USER
+SSH_PASSWORD
 
+для базы данных:
+DB_ENGINE
+DB_NAME
+POSTGRES_USER
+POSTGRES_PASSWORD
+DB_HOST
+DB_PORT
+
+для логина в DockerHub:
+DOCKER_USERNAME
+DOCKER_PASSWORD
+
+TELEGRAM_TOKEN
+TELEGRAM_TO
+
+- Запушить проект на гит-хаб. С помощью CI/CD проект запустит тесты, сделает пуш образа на DockerHub и развернет проект на удаленном сервере, после успешного выполнения всех этапов получите уведомление в Telegram.
+- Выполнить миграции на удаленном сервере:
 ```
 sudo docker-compose exec web python manage.py migrate
-```
-- Создать Супер Пользовтеля:
-```
-docker-compose exec web python manage.py createsuperuser
 ```
 - Подключить статику:
 ```
 docker-compose exec web python manage.py collectstatic --no-input
 ```
-- Загрузить тестовую Базу Данных:
-```
-docker-compose exec web python manage.py importcsv
-```
-Ресурс доступен в [localhost](http://178.154.229.26/)
+Ресурс доступен на [удаленном сервере](http://178.154.229.26/)
 
 Ознакомиться с документацией - 
 [тут](http://178.154.229.26/redoc/)
+
 
 ### Алгоритм получения токена:
 #### 1. Получить код подтвержения.
@@ -47,7 +62,7 @@ docker-compose exec web python manage.py importcsv
 }
 POST-запрос на эндпоинт:
 ```
-localhost/api/v1/auth/signup/
+/api/v1/auth/signup/
 ```
 
 
@@ -61,11 +76,23 @@ localhost/api/v1/auth/signup/
 }
 POST-запрос на эндпоинт:
 ```
-localhost/api/v1/auth/token/
+/api/v1/auth/token/
 ```
 Использовать полученный токен для авторизации.
 
 ### Дополнительные команды:
+- Создать Супер Пользовтеля:
+```
+docker-compose exec web python manage.py createsuperuser
+```
+- Загрузить тестовую Базу Данных:
+```
+docker-compose exec web python manage.py importcsv
+```
+- Посмотреть структуру проекта на сервере:
+```
+sudo docker-compose run web bash
+```
 - Создать дамп (резервную копию) базы:
 ```
 docker-compose exec web python manage.py dumpdata > fixtures.json
