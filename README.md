@@ -18,7 +18,7 @@ scp ./docker-compose.yaml <имя-пользователя>@<ip-address>:~/
 scp ./nginx/default.conf <имя-пользователя>@<ip-address>:~/
 ```
 - Прописать секреты в `https://github.com/<ваш-username>/yamdb_final/settings/secrets/actions`:
-для удаленного сервера:
+<dt>для удаленного сервера:</dt>
 <dd>HOST</dd>
 <dd>USER</dd>
 <dd>SSH_PASSWORD</dd>
