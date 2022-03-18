@@ -41,7 +41,7 @@ git clone https://github.com/afivan20/yamdb_final.git
 scp ./docker-compose.yaml <имя-пользователя>@<ip-address>:~/
 ```
 ```
-scp ./nginx/default.conf <имя-пользователя>@<ip-address>:~/
+scp ./nginx/default.conf <имя-пользователя>@<ip-address>:~/nginx/
 ```
 - Прописать секреты в `https://github.com/<ваш-username>/yamdb_final/settings/secrets/actions`:
 <dl>
