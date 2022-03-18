@@ -21,24 +21,24 @@ scp ./nginx/default.conf <имя-пользователя>@<ip-address>:~/
 <dl>
 <dt>для удаленного сервера:</dt>
 HOST<br>
-USER
-<dd>SSH_PASSWORD</dd>
+USER<br>
+SSH_PASSWORD<br>
 
 <dt>для базы данных:</dt>
-<dd>DB_ENGINE</dd>
-<dd>DB_NAME</dd>
-<dd>POSTGRES_USER</dd>
-<dd>POSTGRES_PASSWORD</dd>
-<dd>DB_HOST</dd>
-<dd>DB_PORT</dd>
+DB_ENGINE<br>
+DB_NAME<br>
+POSTGRES_USER<br>
+POSTGRES_PASSWORD<br>
+DB_HOST<br>
+DB_PORT<br>
 
 <dt>для логина в DockerHub:</dt>
-<dd>DOCKER_USERNAME</dd>
-<dd>DOCKER_PASSWORD</dd>
+DOCKER_USERNAME<br>
+DOCKER_PASSWORD<br>
 
 <dt>для уведомлений от Телеграм-бота</dt>
-<dd>TELEGRAM_TOKEN</dd>
-<dd>TELEGRAM_TO</dd>
+TELEGRAM_TOKEN<br>
+TELEGRAM_TO
 </dl>
 - Запушить проект на гит-хаб. С помощью CI/CD проект запустит тесты, сделает пуш образа на DockerHub и развернет проект на удаленном сервере, после успешного выполнения всех этапов получите уведомление в Telegram.
 - Выполнить миграции на удаленном сервере:
