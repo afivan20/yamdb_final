@@ -20,8 +20,8 @@ scp ./nginx/default.conf <имя-пользователя>@<ip-address>:~/
 - Прописать секреты в `https://github.com/<ваш-username>/yamdb_final/settings/secrets/actions`:
 <dl>
 <dt>для удаленного сервера:</dt>
-<dd>HOST</dd>
-<dd>USER</dd>
+HOST
+USER
 <dd>SSH_PASSWORD</dd>
 
 <dt>для базы данных:</dt>
