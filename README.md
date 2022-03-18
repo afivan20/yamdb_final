@@ -18,10 +18,12 @@ scp ./docker-compose.yaml <имя-пользователя>@<ip-address>:~/
 scp ./nginx/default.conf <имя-пользователя>@<ip-address>:~/
 ```
 - Прописать секреты в `https://github.com/<ваш-username>/yamdb_final/settings/secrets/actions`:
+<dl>
 <dt>для удаленного сервера:</dt>
 <dd>HOST</dd>
 <dd>USER</dd>
 <dd>SSH_PASSWORD</dd>
+
 <dt>для базы данных:</dt>
 <dd>DB_ENGINE</dd>
 <dd>DB_NAME</dd>
@@ -37,7 +39,7 @@ scp ./nginx/default.conf <имя-пользователя>@<ip-address>:~/
 <dt>для уведомлений от Телеграм-бота</dt>
 <dd>TELEGRAM_TOKEN</dd>
 <dd>TELEGRAM_TO</dd>
-
+</dl>
 - Запушить проект на гит-хаб. С помощью CI/CD проект запустит тесты, сделает пуш образа на DockerHub и развернет проект на удаленном сервере, после успешного выполнения всех этапов получите уведомление в Telegram.
 - Выполнить миграции на удаленном сервере:
 ```
