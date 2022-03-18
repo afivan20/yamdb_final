@@ -11,6 +11,27 @@
 [тут](http://178.154.229.26/redoc/)
 
 ## Как запустить проект на удаленном сервере:
+```
+sudo apt update && sudo apt upgrade -y && sudo apt install curl -y
+```
+```
+sudo curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh && sudo rm get-docker.sh
+```
+```
+docker —version
+```
+
+```
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```
+Apply executable permissions to the binary:
+```
+sudo chmod +x /usr/local/bin/docker-compose
+```
+```
+docker-compose —version
+```
+
 - Сделать форк данного репозитория и клонировать его себе на локальную машину:
 ```
 git clone https://github.com/afivan20/yamdb_final.git
