@@ -141,7 +141,6 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'api.yamdb@gmail.com'
 EMAIL_HOST_PASSWORD = 'cozvy2-dEfwet-nyvgav'
 
-
 SIMPLE_JWT = {
     'AUTH_HEADER_TYPES': ('Bearer',),
     'ACCESS_TOKEN_LIFETIME': timedelta(days=14),
