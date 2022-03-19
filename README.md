@@ -63,7 +63,6 @@ DOCKER_PASSWORD<br>
 EMAIL_SMTP<br>
 EMAIL<br>
 EMAIL_PASSWORD<br>
-</dl>
 
 <dt>для уведомлений от Телеграм-бота</dt>
 TELEGRAM_TOKEN<br>
