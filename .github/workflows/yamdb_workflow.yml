@@ -75,6 +75,8 @@ jobs:
             echo EMAIL=${{ secrets.EMAIL }} >> .env
             echo EMAIL_SMTP=${{ secrets.EMAIL_SMTP }} >> .env
 
+            echo SECRET=${{ secrets.SECRET }} >> .env
+
             sudo docker-compose up -d
             
 

@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'SECRET'
+SECRET_KEY = os.getenv('SECRET', default='секретная-тайна')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
