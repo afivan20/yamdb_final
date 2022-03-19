@@ -137,8 +137,8 @@ EMAIL_HOST = 'smtp.aol.com'
 EMAIL_HOST_USER = 'pupkin_v'
 EMAIL_HOST_PASSWORD = 'plzletmein'
 EMAIL_PORT = 465
-# EMAIL_USE_TLS = False
-# EMAIL_USE_SSL = False
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = False
 #####
 # EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 # EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
