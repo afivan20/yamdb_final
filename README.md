@@ -139,6 +139,6 @@ docker system prune -a
 ```
 docker pull afivan20/api_yamdb:latest
 ```
- 
+
 ### Автор
 _Иван Афанасьев, python-devloper_
