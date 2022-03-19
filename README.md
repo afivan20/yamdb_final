@@ -59,6 +59,12 @@ DB_PORT<br>
 DOCKER_USERNAME<br>
 DOCKER_PASSWORD<br>
 
+<dt>для почтового сервера</dt>
+EMAIL_SMTP<br>
+EMAIL<br>
+EMAIL_PASSWORD<br>
+</dl>
+
 <dt>для уведомлений от Телеграм-бота</dt>
 TELEGRAM_TOKEN<br>
 TELEGRAM_TO
