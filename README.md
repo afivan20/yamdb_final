@@ -77,6 +77,9 @@ sudo docker-compose exec web python manage.py migrate
 ```
 docker-compose exec web python manage.py collectstatic --no-input
 ```
+### Получить SSL сертефикат
+для получения серфтифика воспользоваться [certbot](https://certbot.eff.org) от Let’s Encrypt
+и прописать полученнный сертификат в `nginx/default.conf`
 
 ### Алгоритм получения токена:
 #### 1. Получить код подтвержения.
